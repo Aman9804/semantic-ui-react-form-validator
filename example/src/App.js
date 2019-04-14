@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.css';
-import {Form,Input} from 'semantic-ui-react-form-validator'
-import {Header,Container, Button, Dropdown} from 'semantic-ui-react';
+import {Form,Input, Dropdown,TextArea} from 'semantic-ui-react-form-validator'
+import {Header,Container, Button} from 'semantic-ui-react';
 export default class App extends Component {
   onSubmit=()=>{
     alert("Submitted");
   }
   state={
     value:""
+  }
+  componentDidMount(){
+    Form.addValidationRule('isFoo',value=>{
+      var foo=/foo/;
+      return foo.test(value)
+    })
   }
   render () {
     return (
@@ -24,7 +30,6 @@ export default class App extends Component {
           />
           <Dropdown
           width={6}
-          inline
           label="Choose"
           placeholder="Select Authorized Deo"
           options={ [
@@ -65,6 +70,14 @@ export default class App extends Component {
               image: { avatar: true, src: '/images/avatar/small/justen.jpg' },
             },
           ]}
+          />
+
+          <TextArea
+          label="Thsi is a Text Area"
+          validators={['required','isFoo']}
+          errorMessages={['CAnnot Be empty','Doesn\'t Contain to word foo']}
+          value={this.state.txtValue}
+          onChange={e=>{this.setState({txtValue:e.target.value})}}
           />
           <Button color="teal" inverted>Submit</Button>
         </Form>

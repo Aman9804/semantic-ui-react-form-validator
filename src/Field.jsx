@@ -16,9 +16,10 @@ export class Field extends Component{
 }
 export class TextArea extends Component{
     render(){
-        const {width,error,errormsg, ...rest}=this.props;
+        const {width,error,errormsg,label, ...rest}=this.props;
         return (
             <Form.Field width={width} error={error}>
+            {label ? <label></label>:null}
             <Te {...rest} />
             {error? <Label pointing >{errormsg}</Label> :""}
             </Form.Field>
@@ -61,10 +62,12 @@ export class TextArea extends Component{
 
 export class Drop extends Component{
     render(){
+        
         const {width,error,errormsg,label, ...rest}=this.props;
+        console.log("dropdown label",label)
         return (
         <Form.Field width={width || 12} error={error}>
-        <label>{label}</label>
+        {this.props.inline ? <span>{label}</span>:<label>{label}</label>}
         <Dropdown {...rest} />
         {error? <Label pointing >{errormsg}</Label> :""}
         </Form.Field>

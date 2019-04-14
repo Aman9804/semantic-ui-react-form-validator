@@ -32,7 +32,7 @@ export class Input extends ValidatorComponent{
     }
 }
 
-export class TextAreaValidator extends ValidatorComponent{
+export class TextArea extends ValidatorComponent{
     render(){
         const { errorMessages, validators, requiredError, validatorListener, ...rest } = this.props;
         return (
