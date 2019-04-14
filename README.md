@@ -47,8 +47,21 @@ class App extends Component {
   }
 }
 ```
-##Result
+### Result
 ![](input_val.gif)
+Note: You can use the *inline* props to get the inline label.
+##### Here is a list of all props you can use in the *Input* Component.
+
+| Props | Required | Type | Default value | Description |
+| ---- | -------- | ---- | ------------- | ----------- |
+| type | true | string | text | Basic html input type |
+| inline | false | bool | | Set it true to get inline labels |
+| validators | false | array | | Array of validators. See list of default validators above.Leave empty for no validations |
+| errorMessages | false | array | | Array of error messages. Order of messages should be the same as validators prop. |
+| onChange | true | func | | *onChange* fucntion is required to set the value of the input filed |
+| value | true | string | | You need to set the value of the input field in *onChange* function and pass the value as a prop to the *Input* Component.The validator looks for this value.
+
+
 ## License
 
 MIT © [Aman9804](https://github.com/Aman9804)
