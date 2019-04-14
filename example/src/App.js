@@ -85,7 +85,7 @@ export default class App extends Component {
           label="DROPDOWN LABEL"
           placeholder="Select From Dropdown"
           options={options }
-          validators={['required']}
+          // validators={['required']}
           errorMessages={['You must select one option']}
           onChange={(e,{value})=>{this.setState({dropdown:value})}} 
           value={this.state.dropdown} 
@@ -101,8 +101,8 @@ export default class App extends Component {
 
           <TextArea
           label="TEXTAREA LABEL"
-          // validators={['required','isFoo']}
-          errorMessages={['CAnnot Be empty','Doesn\'t Contain to word foo']}
+          validators={['required','isFoo']}
+          errorMessages={['Cannot Be empty','Doesn\'t Contain to word foo']}
           value={this.state.txtValue}
           onChange={e=>{this.setState({txtValue:e.target.value})}}
           />
