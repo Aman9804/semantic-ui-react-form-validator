@@ -67,7 +67,7 @@ export default class App extends Component {
           label="INPUT LABEL"
           onChange={(e)=>{this.setState({value:e.target.value})}}
           value={this.state.value}
-          validators={['required']}
+          // validators={['required']}
           errorMessages={['this field is required']}
           />
           <Input
@@ -85,6 +85,11 @@ export default class App extends Component {
           label="DROPDOWN LABEL"
           placeholder="Select From Dropdown"
           options={options }
+          validators={['required']}
+          errorMessages={['You must select one option']}
+          onChange={(e,{value})=>{this.setState({dropdown:value})}} 
+          value={this.state.dropdown} 
+          search selection
           />
           <Dropdown
           inline
