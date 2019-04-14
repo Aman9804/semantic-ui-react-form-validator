@@ -61,65 +61,7 @@ export class TextArea extends ValidatorComponent{
         );
     }
 }
-// export class DateValidator extends ValidatorComponent{
-//     render(){
-//         const { errorMessages, validators, requiredError, validatorListener, ...rest } = this.props;
-//         return (
-            
-//                 <Date
-//                     {...rest}
-//                     ref={(r) => { this.input = r; }}
-//                     error={!this.state.isValid}
-//                     errormsg={this.errorText()}
-//                 />
-                
-            
-//         );
-//     }
-//     errorText() {
-//         const { isValid } = this.state;
- 
-//         if (isValid) {
-//             return null;
-//         }
- 
-//         return (
-//             <div style={{ color: 'red' }}>
-//                 {this.getErrorMessage()}
-//             </div>
-//         );
-//     }
-// }
-// export class ImgValidator extends ValidatorComponent{
-//     render(){
-//         const { errorMessages, validators, requiredError, validatorListener, ...rest } = this.props;
-//         return (
-            
-//                 <Img
-//                     {...rest}
-//                     ref={(r) => { this.input = r; }}
-//                     error={!this.state.isValid}
-//                     errormsg={this.errorText()}
-//                     input={this.input}
-//                 />
-                
-            
-//         );
-//     }
-//     errorText() {
-//         const { isValid } = this.state;
- 
-//         if (isValid) {
-//             return null;
-//         }
- 
-//         return (
-//             <div style={{ color: 'red' }}>
-//                 {this.getErrorMessage()}
-//             </div>
-//         );
-//     }
-// }
+
 export class Dropdown extends ValidatorComponent{
     render(){
         const { errorMessages, validators, requiredError, validatorListener, ...rest } = this.props;

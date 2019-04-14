@@ -11,7 +11,7 @@ npm install --save semantic-ui-react-form-validator
 ```
 
 ## Usage
-
+First Lets look at the simple input field validation.
 ```jsx
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.css'; //Import the css only once in your project
@@ -28,44 +28,27 @@ class App extends Component {
   render () {
     return (
       <Form 
-      ref="form" //Important
+      ref="form"
       onSubmit={this.onSubmit} 
       >
         <Input 
           type="text"
           label="Test Input"
-          onChange={(e)=>{this.setState({value:e.target.value})}} //Required
-          value={this.state.value} //
-          validators={['required']} //array of validation rules
-          errorMessages={['this field is required']} //Array of Error Messages for respective validation rules
-          width={6} //optional
+          onChange={(e)=>{this.setState({value:e.target.value})}} 
+          value={this.state.value} 
+          validators={['required']} 
+          errorMessages={['this field is required']} 
+          width={6} 
           />
-          <Dropdown
-          width={6}
-          inline //optional
-          label="Choose"
-          placeholder="Select Authorized Deo"
-          options={}
-          onChange={(e,{value})=>this.setState({dropdwonValue:value})}
-          value={this.state.dropdwonValue}
-          validators={['required']}
-          errorMessages={['You must select at least one Deo']}
-          />
-
-          <TextArea
-          label="Thsi is a Text Area"
-          validators={['required','isFoo']} //isFoo is a custom Validation rule
-          errorMessages={['Cannot Be empty','Doesn\'t Contain the word foo']}
-          value={this.state.txtValue}
-          onChange={e=>{this.setState({txtValue:e.target.value})}}
-          />
+          
         <Button color="teal">Submit<Button>
       </From>
     )
   }
 }
 ```
-
+##Result
+![](input_val.gif)
 ## License
 
 MIT © [Aman9804](https://github.com/Aman9804)
